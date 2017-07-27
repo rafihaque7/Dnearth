@@ -9,6 +9,8 @@ import javax.swing.*;
 import java.math.*;
 import java.nio.Buffer;
 import java.awt.Graphics;
+import java.util.ArrayList;
+
 /**
  * Created by rafihaque on 6/24/17.
  */
@@ -54,6 +56,7 @@ public class Peach extends JPanel {
 
 
 
+
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //this.setBackground(Color.WHITE);
@@ -63,14 +66,29 @@ public class Peach extends JPanel {
         //g.drawImage(curveImg,0,0,1400,700,this);
         g.setColor(Color.black);
         //drawPoint(g,100,100);
+        //12 Universal time
+        double lf = l(12);
 
-        for(int i=0; i<=360; i++)
-        {
-            double x = (-1*Math.cos(l(12))*Math.sin(declination(206))*Math.sin(i)-Math.sin(l(12))*Math.cos(i));
-            double y = (-1*Math.sin(l(12))*Math.sin(declination(206))*Math.sin(i)+Math.cos(l(12))*Math.cos(i));
-            drawPoint(g,(int)Math.asin(Math.cos(declination(206))*Math.sin(i)),(int)Math.atan2(y,x));
+        ArrayList latCord = new ArrayList();
+        ArrayList longCord = new ArrayList();
+
+
+        //Arraylist of B
+
+        for (int ψ = 0; ψ <= 360; ψ++) {
+            double x = (-1 * Math.cos(lf)) * Math.sin(declination(206)) * Math.sin(ψ) - Math.sin(lf) * Math.cos(ψ);
+            double y = (-1 * Math.sin(l(12)) * Math.sin(declination(206)) * Math.sin(ψ) + Math.cos(l(12)) * Math.cos(ψ));
+            //drawPoint(g,(int)Math.asin(Math.cos(declination(206))*Math.sin(ψ)),(int)Math.atan2(y,x));
+            latCord.add(Math.asin(Math.cos(declination(206)) * Math.sin(ψ)));
+            longCord.add(Math.atan2(y, x));
         }
         //g.drawImage(navyImg,0,0,1400,700,this);
+
+        for (int i = 0; i < latCord.size(); i++)
+        {
+            //drawPoint(g,(int)latCord.get(i),(int)longCord.get(i));
+            System.out.println(latCord.get(i));
+        }
 
 
         //drawPoint(g,250,250);
