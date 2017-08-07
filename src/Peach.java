@@ -31,13 +31,13 @@ public class Peach extends JPanel implements ActionListener{
     //This for drawing a circle
     public static void drawPoint(Graphics g, int x, int y)
     {
-        g.fillOval(x,y,1,1);
+        g.fillOval(x,y,1,2);
     }
 
     //It repaints every 10 seconds
     Timer tm = new Timer(10000,this);
     //int x = 500, velX = 100; This is for testing purposes
-
+    //int cusMin = 0;
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
@@ -49,6 +49,7 @@ public class Peach extends JPanel implements ActionListener{
         else if(Dnearth.manWidthtable)
         {
             filter_.updateWidthTable(Integer.parseInt(Dnearth.monthField.getText()),Integer.parseInt(Dnearth.dayField.getText()),Integer.parseInt(Dnearth.yearField.getText()),Integer.parseInt(Dnearth.hourField.getText()),Integer.parseInt(Dnearth.minField.getText()));
+            //filter_.updateWidthTable(8,6,2017,0,cusMin);
         }
 
         for (int i = 0; i < filter_.wtab_.length; i++) {
@@ -65,6 +66,7 @@ public class Peach extends JPanel implements ActionListener{
     {
         //x = x + velX;
         //System.out.println(Dnearth.manWidthtable);
+        //cusMin = cusMin + 30;
         repaint();
     }
 }
