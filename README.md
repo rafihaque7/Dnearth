@@ -1,6 +1,5 @@
 # Day Night Earth GUI Java Application
 
-Preview Image: https://github.com/rafihaque7/Dnearth/blob/master/Dnearth%20demo.png
 
 
 **What does the program do?**
@@ -24,3 +23,4 @@ Preview Image: https://github.com/rafihaque7/Dnearth/blob/master/Dnearth%20demo.
 - Dnearth.iml			For intelij stuff
 - README			How to use this program
 
+![main](https://github.com/rafihaque7/Dnearth/blob/master/Dnearth%20demo.png)
