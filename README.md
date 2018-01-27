@@ -1,15 +1,17 @@
+# Day Night Earth GUI Java Application
+
 Preview Image: https://github.com/rafihaque7/Dnearth/blob/master/Dnearth%20demo.png
 
 
-What does the program do?
-Show 2d day and night earth. The curve moves as time progresses and can be inputted a specific time
+**What does the program do?**
+> Show 2d day and night earth. The curve moves as time progresses and can be inputted a specific time
 
 How do I compile and run the program?
 Type "javac *.java" to compile the program
 Type "java Dnearth" to run the program
 
 
-All the Files
+**All the Files
 - Dnearth.java			Main function and GUI stuff
 - Peach.java			The map and the curve is drawn
 - Curve.java			The calculation for the curve 
